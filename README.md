@@ -1,6 +1,6 @@
 # Django Yelp Camp
 [![Python Version](https://img.shields.io/badge/python-3.12.3-brightgreen.svg)](https://python.org)
-[![Django Version](https://img.shields.io/badge/django==5.0.6-brightgreen.svg)](https://djangoproject.com)
+[![Django Version](https://img.shields.io/badge/django-5.0.6-brightgreen.svg)](https://djangoproject.com)
 
 ## Running the Project Locally
 
