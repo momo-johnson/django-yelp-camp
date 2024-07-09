@@ -14,7 +14,10 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+if DEBUG:
+    ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+else:
+    ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -144,7 +147,6 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 
 
-DEBUG = config('DEBUG', default=False, cast=bool)
 if IS_HEROKU_APP:
     ALLOWED_HOSTS = ["*"]
 else:
