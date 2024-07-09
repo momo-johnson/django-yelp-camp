@@ -173,7 +173,6 @@ else:
             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
-os.path.join
 
 os.environ["GOOGLE_API_KEY"] = config('GOOGLE_API_KEY', cast=str)
 # STATIC_ROOT = BASE_DIR / "staticfiles"
