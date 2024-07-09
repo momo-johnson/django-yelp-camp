@@ -14,10 +14,10 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-if DEBUG:
-    ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-else:
-    ALLOWED_HOSTS = ['.herokuapp.com']
+# if DEBUG:
+#     ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+# else:
+#     ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
