@@ -180,7 +180,7 @@ os.environ["GOOGLE_API_KEY"] = config('GOOGLE_API_KEY', cast=str)
 # STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
