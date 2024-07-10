@@ -11,4 +11,3 @@ c9
 db.sqlite3
 .DS_Store
 .vscode/launch.json
-migrations
