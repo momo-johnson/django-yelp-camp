@@ -4,12 +4,20 @@ from django.urls import reverse_lazy
 from decouple import config, Csv
 import cloudinary
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = config('SECRET_KEY')
 
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD")
+    }
+}
 
 # Application definition
 
@@ -95,6 +103,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -122,12 +131,13 @@ REGISTRATION_AUTO_LOGIN = True
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
 EMAIL_BACKEND = 'accounts.backends.email_backend.EmailBackend' 
 EMAIL_HOST = config('EMAIL_HOST', cast=str)
-EMAIL_PORT = 587
+EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 
 
+ALLOWED_HOSTS = ['*']
 
 os.environ["GOOGLE_API_KEY"] = config('GOOGLE_API_KEY', cast=str)
 # STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -157,4 +167,3 @@ STORAGES = {
     },
     
 }
-

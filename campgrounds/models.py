@@ -40,4 +40,5 @@ class Campground(models.Model):
         return User.objects.count()
     
     def get_max_and_min_campground_price(self):
+        agg = Campground.objects.aggregate(Avg('price'), Max('price'), Min('price'))
         return Campground.objects.aggregate(Avg('price'), Max('price'), Min('price'))
